@@ -4,61 +4,187 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOLVOLT - Logo Design</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+		body {
+		    font-family: Helvetica, Arial, sans-serif;
+		    font-size: 16px;
+		    line-height: 1.5;
+		    font-weight: 400;
+		}
+        /* Base reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* .relative */
+        .relative {
+            position: relative;
+        }
+
+        /* .sticky */
+        .sticky {
+            position: sticky;
+        }
+
+        /* .top-0 */
+        .top-0 {
+            top: 0;
+        }
+
+        /* .h-screen */
+        .h-screen {
+            height: 100vh;
+        }
+
+        /* .flex */
+        .flex {
+            display: flex;
+        }
+
+        /* .flex-col */
+        .flex-col {
+            flex-direction: column;
+        }
+
+        /* .items-center */
+        .items-center {
+            align-items: center;
+        }
+
+        /* .justify-center */
+        .justify-center {
+            justify-content: center;
+        }
+
+        /* .text-white */
+        .text-white {
+            color: #ffffff;
+        }
+
+        /* .mt-2 */
+        .mt-2 {
+            margin-top: 0.5rem;
+        }
+
+        /* .grid */
+        .grid {
+            display: grid;
+        }
+
+        /* .grid-cols-1 */
+        .grid-cols-1 {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+
+        /* .gap-20 */
+        .gap-20 {
+            gap: 5rem;
+        }
+
+        /* .gap-2 */
+        .gap-2 {
+            gap: 0.5rem;
+        }
+
+        /* .place-items-center */
+        .place-items-center {
+            place-items: center;
+        }
+
+        /* .max-w-\[80\%\] */
+        .max-w-80pct {
+            max-width: 80%;
+        }
+        
+        .section-logo {
+	        max-width: 60%;
+        }
+        
+        .section-01 {
+	        gap:20px;
+        }
+
+        /* sm: breakpoint = 640px */
+        @media (min-width: 640px) {
+            /* .sm\:grid-cols-3 */
+            .grid-cols-1 {
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            
+		    .grid-cols-1 > :last-child {
+		        grid-column: 1 / -1; /* span full width */
+		        justify-self: center;  /* centre the item within that span */
+		    }
+
+            /* .sm\:max-w-\[300px\] */
+            .sm-max-w-300 {
+                max-width: 300px;
+            }
+            
+	        .section-logo {
+		        max-width: 500px;
+	        }
+        }
+        
+                /* sm: breakpoint = 640px */
+        @media (min-width: 1100px) {
+            /* .sm\:grid-cols-3 */
+            .grid-cols-1 {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+            
+            .grid-cols-1 > :last-child {
+		        grid-column: inherit; /* span full width */
+		    }
+
+        }
+    </style>
 </head>
 <body id="body">
 <div class="relative">
-
     <!-- Section 1 -->
     <div class="section-01 sticky top-0 h-screen flex flex-col items-center justify-center" style="background: url('assets/bg.jpg') no-repeat; background-size: cover; background-position: center;">
-        <img src="assets/1.png" alt="Logo concept 1" style="max-width: 400px; outline: 1px soild red">
+        <img class="section-logo" src="assets/1.png" alt="Logo concept 1">
         <p class="mt-2" style="color: #FFF;">Scroll Down for next slide</p>
     </div>
-
     <!-- Section 2 - Transition slide -->
     <div class="section-02 sticky top-0 h-screen flex flex-col items-center justify-center text-white" style="background: url('assets/bg1.jpg') no-repeat; background-size: cover; background-position: center;">
     </div>
-
     <!-- Section 3 -->
     <div class="section-03 sticky top-0 h-screen flex flex-col items-center justify-center text-white" style="background: url('assets/bg2.jpg') no-repeat; background-size: cover; background-position: center;">
-        <img src="assets/2.png" alt="Logo concept 2" style="max-width: 400px;">
+        <img class="section-logo" src="assets/2.png" alt="Logo concept 2">
         <p class="mt-2">Scroll Down for next slide</p>
     </div>
-
     <!-- Section 4 - Transition slide -->
     <div class="section-04 sticky top-0 h-screen flex flex-col items-center justify-center text-white" style="background: url('assets/shirt.jpg') no-repeat; background-size: cover; background-position: center;">
     </div>
-
     <!-- Section 5 -->
     <div class="section-05 sticky top-0 h-screen flex flex-col items-center justify-center text-white" style="background: url('assets/bg3.jpg') no-repeat; background-size: cover; background-position: center;">
-        <img src="assets/3b.png" alt="Logo concept 3" style="max-width: 400px;">
+        <img class="section-logo" src="assets/3b.png" alt="Logo concept 3">
         <p class="mt-2">Scroll Down for next slide</p>
     </div>
-
     <!-- Section 6 - Transition slide -->
     <div class="section-06 sticky top-0 h-screen flex flex-col items-center justify-center text-white" style="background: url('assets/bg4b.jpg') no-repeat; background-size: cover; background-position: center;">
     </div>
-
     <!-- Section 7 - Logo grid overview -->
     <div class="sticky top-0 h-screen flex flex-col items-center justify-center text-white" style="background-color: #0b1519;">
-
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-20 place-items-center">
+        <div class="grid grid-cols-1 gap-20 place-items-center">
             <div class="flex flex-col items-center gap-2">
-                <img src="assets/1.png" alt="Logo concept 1" class="sm:max-w-[300px] max-w-[80%]">
+                <img src="assets/1.png" alt="Logo concept 1" class="sm-max-w-300 max-w-80pct">
                 <span style="color: #4f636b">1</span>
             </div>
             <div class="flex flex-col items-center gap-2">
-                <img src="assets/2.png" alt="Logo concept 2" class="sm:max-w-[300px] max-w-[80%]">
+                <img src="assets/2.png" alt="Logo concept 2" class="sm-max-w-300 max-w-80pct">
                 <span style="color: #4f636b">2</span>
             </div>
             <div class="flex flex-col items-center gap-2">
-                <img src="assets/3b.png" alt="Logo concept 3" class="sm:max-w-[300px] max-w-[80%]">
+                <img src="assets/3b.png" alt="Logo concept 3" class="sm-max-w-300 max-w-80pct">
                 <span style="color: #4f636b">3</span>
             </div>
         </div>
-
     </div>
-
 </div>
 </body>
 </html>
